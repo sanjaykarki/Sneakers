@@ -114,3 +114,29 @@ currentProductColors.forEach((color, index) => {
     currentProductImg.src = choosenProduct.colors[index].img;
   });
 });
+
+// changing products size button colors
+currentProductSizes.forEach((size, index) => {
+  size.addEventListener("click", () => {
+    currentProductSizes.forEach((size) => {
+      size.style.backgroundColor = "white";
+      size.style.color = "black";
+    });
+    size.style.backgroundColor = "black";
+    size.style.color = "white";
+  });
+});
+
+// Display payment form when clicked
+const productButton = document.querySelector(".productButton");
+const payment = document.querySelector(".payment");
+const close = document.querySelector(".close");
+
+productButton.addEventListener("click", () => {
+  payment.style.display = "flex";
+});
+
+// Close paayment form
+close.addEventListener("click", () => {
+  payment.style.display = "none";
+});
